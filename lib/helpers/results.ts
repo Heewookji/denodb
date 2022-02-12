@@ -9,8 +9,7 @@ export function formatResultToModelInstance(
   const instance = new Schema();
 
   for (const field in fields) {
-    (instance as any)[Schema.formatFieldToClient(field) as string] =
-      fields[field];
+    (instance as any)[field] = fields[field];
   }
 
   return instance;
